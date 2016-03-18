@@ -1,9 +1,8 @@
-package com.globant.training.rocio_bossio;
+package com.globant.training.rocio_bossio.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,8 +11,8 @@ public class HomePage {
 
   WebDriver driver;
 
-   @FindBy(id = "site-title")
-   private WebElement title;
+  @FindBy(id = "site-title")
+  private WebElement title;
 
   @FindBy(id = "s")
   private WebElement searchBox;
@@ -23,10 +22,10 @@ public class HomePage {
     driver.manage().window().maximize();
   }
 
-   public void waiting(WebDriver driver) {
-   WebDriverWait wait = new WebDriverWait(driver, 60000);
-   wait.until(ExpectedConditions.visibilityOf(title));
-   }
+  public void waiting(WebDriver driver) {
+    WebDriverWait wait = new WebDriverWait(driver, 60000);
+    wait.until(ExpectedConditions.visibilityOf(title));
+  }
 
   public void search(String query) {
     searchBox.sendKeys(query);
