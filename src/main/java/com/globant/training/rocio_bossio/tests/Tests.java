@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.globant.training.rocio_bossio.pages.HomePage;
 import com.globant.training.rocio_bossio.pages.SearchPage;
+import com.globant.training.rocio_bossio.pages.SinglePostPage;
 
 public class Tests {
 
@@ -32,10 +33,10 @@ public class Tests {
    * Close driver.
    */
 
-//  @AfterMethod
-//  public void after() {
-//    driver.quit();
-//  }
+  // @AfterMethod
+  // public void after() {
+  // driver.quit();
+  // }
 
   /**
    * Case 1: Verify if the title is the expected one.
@@ -48,19 +49,43 @@ public class Tests {
     Assert.assertEquals(expectedTitle, driver.getTitle(), otherTitle);
   }
 
-  @Test(description = "Verifing if the query has results displayed")
+  /**
+   * Case 2: Verify if the query has results displayed.
+   */
+
+  @Test(description = "Verifying if the query has results displayed")
   public void case2() {
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     homePage.ir(driver);
     homePage.waiting(driver);
-    homePage.search("test"); 
+    homePage.search("test"); // como hacer para utilizar esta palabra
     SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
     searchPage.esperando(driver);
     WebElement resultText = driver.findElement(By.className("page-title"));
     String resulting = resultText.getText();
-    String expectedTitle = "SEARCH RESULTS FOR: TEST";
+    String expectedTitle = "SEARCH RESULTS FOR: TEST"; // aca
     String otherTitle = "Not Found";
     Assert.assertEquals(expectedTitle, resulting, otherTitle);
+  }
+
+  /**
+   * Case 3: Verify if a post date is the expected one.
+   */
+
+  @Test(description = "Verifying if a post date is the expected one")
+  public void case3() {
+    HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    homePage.ir(driver);
+    homePage.waiting(driver);
+    String gettingTime = homePage.getTime;
+    System.out.println("Obteniendo primer date" + gettingTime);
+    String otherTime = "Title is not displayed as expected";
+    homePage.goToSinglePostPage();
+    SinglePostPage singlePost = PageFactory.initElements(driver, SinglePostPage.class);
+    String getOtherTime = singlePost.getTimeSinglePost();
+    System.out.println("Obteniendo segundo date" + getOtherTime);
+    Assert.assertEquals(gettingTime, getOtherTime, otherTime);
+    System.out.println("Comparacion");
     driver.quit();
   }
 

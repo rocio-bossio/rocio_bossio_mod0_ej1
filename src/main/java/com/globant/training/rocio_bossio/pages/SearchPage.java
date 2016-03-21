@@ -1,3 +1,7 @@
+/**
+ * Class to interact with Search Page.
+ */
+
 package com.globant.training.rocio_bossio.pages;
 
 //import org.openqa.selenium.By;
