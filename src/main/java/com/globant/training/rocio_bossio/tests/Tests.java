@@ -10,6 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.globant.training.rocio_bossio.pages.ContactUsPage;
+import com.globant.training.rocio_bossio.pages.SucessContactFormSent;
 import com.globant.training.rocio_bossio.pages.HomePage;
 import com.globant.training.rocio_bossio.pages.SearchPage;
 import com.globant.training.rocio_bossio.pages.SinglePostPage;
@@ -78,7 +80,7 @@ public class Tests {
     homePage.ir(driver);
     homePage.waiting(driver);
     String gettingTime = homePage.getTime;
-    System.out.println("Obteniendo primer date" + gettingTime);
+    System.out.println("Obteniendo primer date" + gettingTime); // lo toma mal
     String otherTime = "Title is not displayed as expected";
     homePage.goToSinglePostPage();
     SinglePostPage singlePost = PageFactory.initElements(driver, SinglePostPage.class);
@@ -86,7 +88,26 @@ public class Tests {
     System.out.println("Obteniendo segundo date" + getOtherTime);
     Assert.assertEquals(gettingTime, getOtherTime, otherTime);
     System.out.println("Comparacion");
-    driver.quit();
   }
 
+  /**
+   * Case 4: Send form and verify if it was properly sent.
+   */
+
+  @Test(description = "Send form and verify if it was properly sent")
+  public void case4() {
+    HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    homePage.ir(driver);
+    homePage.waiting(driver);
+    homePage.goToContactUsPage();
+    ContactUsPage contactUs = PageFactory.initElements(driver, ContactUsPage.class);
+    contactUs.completeForm("Tester", "test@test.com", "Testing", "Testing");
+    contactUs.waiting(driver);
+    contactUs.sendForm();
+    SucessContactFormSent Thanks = PageFactory.initElements(driver, SucessContactFormSent.class);
+    String answer = Thanks.getMessage();
+    Assert.assertTrue(answer.contains("Thank you for contacting us."));
+    driver.quit();
+  }
 }
+  

@@ -2,7 +2,6 @@
  * Class to interact with Home Page.
  */
 
-
 package com.globant.training.rocio_bossio.pages;
 
 import org.openqa.selenium.Keys;
@@ -21,13 +20,16 @@ public class HomePage {
 
   @FindBy(id = "s")
   private WebElement searchBox;
-  
-//  @FindBy(tagName = "time")
-//  private WebElement lastPostTime;
+
+  // @FindBy(tagName = "time")
+  // private WebElement lastPostTime;
 
   @FindBy(xpath = ".//*[@id='post-41']/header/div/a/time")
   private WebElement lastPostTime;
- 
+  
+  @FindBy(css = ".page_item.page-item-2>a")
+  private WebElement contactUs;
+
   public String getTime;
 
   public void ir(WebDriver driver) {
@@ -44,13 +46,17 @@ public class HomePage {
     searchBox.sendKeys(query);
     searchBox.sendKeys(Keys.ENTER);
   }
-  
-  public String getTime(){
+
+  public String getTime() {
     return lastPostTime.getText();
   }
-  
-  public void goToSinglePostPage(){
+
+  public void goToSinglePostPage() {
     lastPostTime.click();
+  }
+  
+  public void goToContactUsPage(){
+    contactUs.click();
   }
 
 }
