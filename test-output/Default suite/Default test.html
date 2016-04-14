@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 13 11:19:10 ART 2016</td>
+<td>Started on:</td><td>Thu Apr 14 16:53:49 ART 2016</td>
 </tr>
-<tr><td>Total time:</td><td>32 seconds (32165 ms)</td>
+<tr><td>Total time:</td><td>12 seconds (12709 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,12 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.globant.training.rocio_bossio.tests.Tests.case3()'><b>case3</b><br>Test class: com.globant.training.rocio_bossio.tests.Tests<br>Test method: Verifying if a post date is the expected one</td>
-<td><div><pre>java.lang.AssertionError: Title is not displayed as expected expected [October 10, 2013] but found [null]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:130)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:89)
+<td><div><pre>java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.globant.training.rocio_bossio.pages.HomePage.goToSinglePostPage(HomePage.java:55)
+	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -104,17 +103,16 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
 	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-</pre></div><a href='#' onClick='toggleBox("stack-trace32744920", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace32744920'><pre>java.lang.AssertionError: Title is not displayed as expected expected [October 10, 2013] but found [null]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:130)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:89)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+</pre></div><a href='#' onClick='toggleBox("stack-trace808417649", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace808417649'><pre>java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.globant.training.rocio_bossio.pages.HomePage.goToSinglePostPage(HomePage.java:55)
+	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -136,12 +134,12 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
 	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
 </pre></div></td>
-<td>4</td>
-<td>com.globant.training.rocio_bossio.tests.Tests@1e56eb2</td></tr>
+<td>0</td>
+<td>com.globant.training.rocio_bossio.tests.Tests@6e1ec318</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -151,20 +149,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.globant.training.rocio_bossio.tests.Tests.case1()'><b>case1</b><br>Test class: com.globant.training.rocio_bossio.tests.Tests<br>Test method: Verifing if title displayed is the expected one</td>
+<td title='com.globant.training.rocio_bossio.tests.Tests.case1()'><b>case1</b><br>Test class: com.globant.training.rocio_bossio.tests.Tests<br>Test method: Verifying if title displayed is the expected one</td>
 <td></td>
 <td>0</td>
-<td>com.globant.training.rocio_bossio.tests.Tests@1e56eb2</td></tr>
-<tr>
-<td title='com.globant.training.rocio_bossio.tests.Tests.case2()'><b>case2</b><br>Test class: com.globant.training.rocio_bossio.tests.Tests<br>Test method: Verifying if the query has results displayed</td>
-<td></td>
-<td>3</td>
-<td>com.globant.training.rocio_bossio.tests.Tests@1e56eb2</td></tr>
-<tr>
-<td title='com.globant.training.rocio_bossio.tests.Tests.case4()'><b>case4</b><br>Test class: com.globant.training.rocio_bossio.tests.Tests<br>Test method: Send form and verify if it was properly sent</td>
-<td></td>
-<td>13</td>
-<td>com.globant.training.rocio_bossio.tests.Tests@1e56eb2</td></tr>
+<td>com.globant.training.rocio_bossio.tests.Tests@6e1ec318</td></tr>
 </table><p>
 </body>
 </html>

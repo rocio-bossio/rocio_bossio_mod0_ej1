@@ -18,15 +18,15 @@ public class HomePage {
   @FindBy(id = "site-title")
   private WebElement title;
 
-  @FindBy(id = "s")
+  @FindBy(css = "aside input#s")
   private WebElement searchBox;
 
-  // @FindBy(tagName = "time")
-  // private WebElement lastPostTime;
-
-  @FindBy(xpath = ".//*[@id='post-41']/header/div/a/time")
+  @FindBy(css = "article#post-41 .entry-date")
   private WebElement lastPostTime;
-  
+
+  @FindBy(css = "article#post-41 .entry-title>a")
+  private WebElement postTitle;
+
   @FindBy(css = ".page_item.page-item-2>a")
   private WebElement contactUs;
 
@@ -39,7 +39,7 @@ public class HomePage {
 
   public void waiting(WebDriver driver) {
     WebDriverWait wait = new WebDriverWait(driver, 60000);
-    wait.until(ExpectedConditions.visibilityOf(title));
+    wait.until(ExpectedConditions.visibilityOf(searchBox));
   }
 
   public void search(String query) {
@@ -52,10 +52,10 @@ public class HomePage {
   }
 
   public void goToSinglePostPage() {
-    lastPostTime.click();
+    postTitle.click();
   }
-  
-  public void goToContactUsPage(){
+
+  public void goToContactUsPage() {
     contactUs.click();
   }
 

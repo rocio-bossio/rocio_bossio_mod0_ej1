@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="4" passed="3">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32165" started-at="2016-04-13T14:19:10Z" finished-at="2016-04-13T14:19:42Z">
+  <suite name="Default suite" duration-ms="12709" started-at="2016-04-14T19:53:49Z" finished-at="2016-04-14T19:54:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32165" started-at="2016-04-13T14:19:10Z" finished-at="2016-04-13T14:19:42Z">
+    <test name="Default test" duration-ms="12709" started-at="2016-04-14T19:53:49Z" finished-at="2016-04-14T19:54:02Z">
       <class name="com.globant.training.rocio_bossio.tests.Tests">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="before" is-config="true" duration-ms="4009" started-at="2016-04-13T11:19:10Z" finished-at="2016-04-13T11:19:14Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@6e1ec318]" name="before" is-config="true" duration-ms="6345" started-at="2016-04-14T16:53:49Z" finished-at="2016-04-14T16:53:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="case1()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="case1" duration-ms="35" started-at="2016-04-13T11:19:14Z" description="Verifing if title displayed is the expected one" finished-at="2016-04-13T11:19:14Z">
+        <test-method status="PASS" signature="case1()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@6e1ec318]" name="case1" duration-ms="25" started-at="2016-04-14T16:53:55Z" description="Verifying if title displayed is the expected one" finished-at="2016-04-14T16:53:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- case1 -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="before" is-config="true" duration-ms="1776" started-at="2016-04-13T11:19:14Z" finished-at="2016-04-13T11:19:16Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@6e1ec318]" name="after" is-config="true" duration-ms="592" started-at="2016-04-14T16:53:55Z" finished-at="2016-04-14T16:53:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+        <test-method status="PASS" signature="before()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@6e1ec318]" name="before" is-config="true" duration-ms="5265" started-at="2016-04-14T16:53:56Z" finished-at="2016-04-14T16:54:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="case2()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="case2" duration-ms="3798" started-at="2016-04-13T11:19:16Z" description="Verifying if the query has results displayed" finished-at="2016-04-13T11:19:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case2 -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="before" is-config="true" duration-ms="1871" started-at="2016-04-13T11:19:19Z" finished-at="2016-04-13T11:19:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- before -->
-        <test-method status="FAIL" signature="case3()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="case3" duration-ms="4527" started-at="2016-04-13T11:19:21Z" description="Verifying if a post date is the expected one" finished-at="2016-04-13T11:19:26Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Title is not displayed as expected expected [October 10, 2013] but found [null]]]>
-            </message>
+        <test-method status="FAIL" signature="case3()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@6e1ec318]" name="case3" duration-ms="3" started-at="2016-04-14T16:54:01Z" description="Verifying if a post date is the expected one" finished-at="2016-04-14T16:54:01Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Title is not displayed as expected expected [October 10, 2013] but found [null]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:130)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:89)
+              <![CDATA[java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.globant.training.rocio_bossio.pages.HomePage.goToSinglePostPage(HomePage.java:55)
+	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -61,23 +53,19 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
 	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- case3 -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="before" is-config="true" duration-ms="2119" started-at="2016-04-13T11:19:26Z" finished-at="2016-04-13T11:19:28Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@6e1ec318]" name="after" is-config="true" duration-ms="449" started-at="2016-04-14T16:54:01Z" finished-at="2016-04-14T16:54:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- before -->
-        <test-method status="PASS" signature="case4()[pri:0, instance:com.globant.training.rocio_bossio.tests.Tests@1e56eb2]" name="case4" duration-ms="13813" started-at="2016-04-13T11:19:28Z" description="Send form and verify if it was properly sent" finished-at="2016-04-13T11:19:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case4 -->
+        </test-method> <!-- after -->
       </class> <!-- com.globant.training.rocio_bossio.tests.Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -27,9 +27,9 @@ public class ContactUsPage {
   @FindBy(xpath = ".//*[@id='cntctfrm_contact_form']/div[9]/input[4]")
   private WebElement contactSubmit;
 
-  @FindBy(xpath = "//*[@id='cntctfrm_contact_form']/"
-      + "div[@style='text-align: left; color: red;'][1]")
-  private WebElement errorMessage;
+//  @FindBy(xpath = "//*[@id='cntctfrm_contact_form']/"
+//      + "div[@style='text-align: left; color: red;'][1]")
+//  private WebElement errorMessage;
 
   public void completeForm(String Name, String Mail, String Subject, String Message) {
     contactName.sendKeys(Name);

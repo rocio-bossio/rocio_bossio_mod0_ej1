@@ -10,6 +10,7 @@
     <classes>
       <class name="com.globant.training.rocio_bossio.tests.Tests">
         <methods>
+          <include name="after"/>
           <include name="case3"/>
           <include name="before"/>
         </methods>

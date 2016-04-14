@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Miss Adk\AppData\Local\Temp\testng-eclipse-1460064798\testng-customsuite.xml</span>
+                    <span>C:\Users\rocio.bossio\AppData\Local\Temp\testng-eclipse-894567434\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -119,16 +119,6 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.globant.training.rocio_bossio.tests.Tests" hash-for-method="case1">case1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.globant.training.rocio_bossio.tests.Tests" hash-for-method="case2">case2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.globant.training.rocio_bossio.tests.Tests" hash-for-method="case4">case4</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
@@ -152,13 +142,12 @@
                   <a name="case3">
                   </a> <!-- case3 -->
                   <span class="method-name">case3</span>
-                  <div class="stack-trace">java.lang.AssertionError: Title is not displayed as expected expected [October 10, 2013] but found [null]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:130)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:89)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy7.click(Unknown Source)
+	at com.globant.training.rocio_bossio.pages.HomePage.goToSinglePostPage(HomePage.java:55)
+	at com.globant.training.rocio_bossio.tests.Tests.case3(Tests.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -180,9 +169,9 @@
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
 	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -203,25 +192,7 @@
                   </a> <!-- case1 -->
                   <span class="method-name">case1</span>
                   <em>
-(Verifing if title displayed is the expected one)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="case2">
-                  </a> <!-- case2 -->
-                  <span class="method-name">case2</span>
-                  <em>
-(Verifying if the query has results displayed)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="case4">
-                  </a> <!-- case4 -->
-                  <span class="method-name">case4</span>
-                  <em>
-(Send form and verify if it was properly sent)                  </em>
+(Verifying if title displayed is the expected one)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -229,7 +200,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Miss Adk\AppData\Local\Temp\testng-eclipse-1460064798\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\rocio.bossio\AppData\Local\Temp\testng-eclipse-894567434\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -278,28 +249,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'case4')
+data.setCell(0, 1, 'case1')
 data.setCell(0, 2, 'com.globant.training.rocio_bossio.tests.Tests')
-data.setCell(0, 3, 13813);
+data.setCell(0, 3, 25);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'case3')
 data.setCell(1, 2, 'com.globant.training.rocio_bossio.tests.Tests')
-data.setCell(1, 3, 4527);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'case2')
-data.setCell(2, 2, 'com.globant.training.rocio_bossio.tests.Tests')
-data.setCell(2, 3, 3798);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'case1')
-data.setCell(3, 2, 'com.globant.training.rocio_bossio.tests.Tests')
-data.setCell(3, 3, 35);
+data.setCell(1, 3, 3);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 22 seconds</span>
+              <span class="suite-total-time">Total running time: 28 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -332,34 +295,26 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">case1</span>
-                <span class="method-start">4009 ms</span>
+                <span class="method-start">6345 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">6373 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">before</span>
-                <span class="method-start">4047 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">case2</span>
-                <span class="method-start">5823 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">before</span>
-                <span class="method-start">9624 ms</span>
+                <span class="method-start">6966 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">case3</span>
-                <span class="method-start">11495 ms</span>
+                <span class="method-start">12231 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">before</span>
-                <span class="method-start">16038 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">case4</span>
-                <span class="method-start">18157 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">12240 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
