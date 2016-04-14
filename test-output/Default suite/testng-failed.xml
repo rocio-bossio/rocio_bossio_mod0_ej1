@@ -12,7 +12,6 @@
         <methods>
           <include name="case3"/>
           <include name="before"/>
-          <include name="case4"/>
         </methods>
       </class> <!-- com.globant.training.rocio_bossio.tests.Tests -->
     </classes>
