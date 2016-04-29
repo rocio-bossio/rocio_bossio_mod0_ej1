@@ -4,12 +4,12 @@
 
 package com.globant.training.rocio_bossio.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
@@ -30,16 +30,14 @@ public class HomePage {
   @FindBy(css = ".page_item.page-item-2>a")
   private WebElement contactUs;
 
+  @FindBy(css = "entry-date")
+  private List<WebElement> entriesDates;
+
   public String getTime;
 
   public void ir(WebDriver driver) {
     driver.get("http://10.28.148.127/wordpress");
     driver.manage().window().maximize();
-  }
-
-  public void waiting(WebDriver driver) {
-    WebDriverWait wait = new WebDriverWait(driver, 60000);
-    wait.until(ExpectedConditions.visibilityOf(searchBox));
   }
 
   public void search(String query) {
@@ -48,7 +46,8 @@ public class HomePage {
   }
 
   public String getTime() {
-    return lastPostTime.getText();
+    WebElement entryDate = entriesDates.get(1);
+    return entryDate.getText();
   }
 
   public void goToSinglePostPage() {

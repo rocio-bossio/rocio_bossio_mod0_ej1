@@ -26,7 +26,13 @@ public class ContactUsPage {
 
   @FindBy(xpath = ".//*[@id='cntctfrm_contact_form']/div[9]/input[4]")
   private WebElement contactSubmit;
+  
+  @FindBy(css = ".page_item.page-item-2.current_page_item>a")
+  private WebElement contactUsBtn;
 
+  @FindBy(xpath = ".//*[@id='cntctfrm_contact_form']/div[1]")
+  private WebElement errorMessage;
+  
 //  @FindBy(xpath = "//*[@id='cntctfrm_contact_form']/"
 //      + "div[@style='text-align: left; color: red;'][1]")
 //  private WebElement errorMessage;
@@ -39,5 +45,12 @@ public class ContactUsPage {
     contactSubmit.click();
   }
   
-// identificar el Mensaje de error.
+  public void goBackToContactUs() {
+    contactUsBtn.click();
+  }
+
+  public String getMessage() {
+    return errorMessage.getText();
+  }
+  
 }

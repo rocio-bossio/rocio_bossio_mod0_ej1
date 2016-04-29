@@ -1,6 +1,7 @@
 package com.globant.training.rocio_bossio.tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -35,10 +36,10 @@ public class Tests {
    * Close driver.
    */
 
-   @AfterMethod
-   public void after() {
-   driver.quit();
-   }
+  @AfterMethod
+  public void after() {
+    driver.quit();
+  }
 
   /**
    * Case 1: Verify if the title is the expected one.
@@ -58,13 +59,15 @@ public class Tests {
   @Test(description = "Verifying if the query has results displayed")
   public void case2() {
     String busqueda = "TEST";
-    homePage.waiting(driver);
-    homePage.search(busqueda);
+    WebElement searching = driver.findElement(By.cssSelector("aside input#s"));
+    searching.sendKeys(busqueda);
+    searching.sendKeys(Keys.ENTER);
+    // Lineas 64 a 66 no funcionan en la clase HomePage.
     SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
     searchPage.esperando(driver);
     WebElement resultText = driver.findElement(By.className("page-title"));
     String resulting = resultText.getText();
-    String expectedTitle = "SEARCH RESULTS FOR: " + busqueda; 
+    String expectedTitle = "SEARCH RESULTS FOR: " + busqueda;
     String otherTitle = "Not Found";
     Assert.assertEquals(expectedTitle, resulting, otherTitle);
   }
@@ -75,48 +78,53 @@ public class Tests {
 
   @Test(description = "Verifying if a post date is the expected one")
   public void case3() {
-    String gettingTime = homePage.getTime;
-    System.out.println("Obteniendo primer date" + gettingTime); // lo toma mal
+    WebElement postTitle = driver.findElement(By.cssSelector("article#post-41 .entry-title>a"));
+    postTitle.click();
+    WebElement postDate = driver.findElement(By.cssSelector("article#post-41 .entry-date"));
+    String gettingTime = postDate.getText();
+    // Lineas 78 a 81 no funcionan en la clase HomePage.
     String otherTime = "Title is not displayed as expected";
-    homePage.goToSinglePostPage();
     SinglePostPage singlePost = PageFactory.initElements(driver, SinglePostPage.class);
     String getOtherTime = singlePost.getTimeSinglePost();
-    System.out.println("Obteniendo segundo date" + getOtherTime);
     Assert.assertEquals(gettingTime, getOtherTime, otherTime);
-    System.out.println("Comparacion");
   }
 
-//  /**
-//   * Case 4: Send form and verify if it was properly sent.
-//   */
-//
-//  @Test(description = "Send form and verify if it was properly sent")
-//  public void case4() {
-//    homePage.goToContactUsPage();
-//    ContactUsPage contactUs = PageFactory.initElements(driver, ContactUsPage.class);
-//    contactUs.completeForm("Tester", "test@test.com", "Testing", "Testing");
-//    SucessContactFormSent Thanks = PageFactory.initElements(driver, SucessContactFormSent.class);
-//    String answer = Thanks.getMessage();
-//    Assert.assertTrue(answer.contains("Thank you for contacting us."));
-//  }
+  /**
+   * Case 4: Send form and verify if it was properly sent.
+   */
 
-//  /**
-//   * Case 5: Send form with invalid data and verify if it was not sent. Send
-//   * again with valid data and verify if it was properly sent.
-//   */
-//
-//  @Test(description = "Send form with invalid data and verify if it was not sent. Send again "
-//      + "with valid data and verify if it was properly sent")
-//  public void case5() {
-//    homePage.goToContactUsPage();
-//    ContactUsPage contactUs = PageFactory.initElements(driver, ContactUsPage.class);
-//    contactUs.completeForm("Tester", "test", "Testing", "Testing");
-//    // verificar el Mensaje de error en el caMpo Mail.
-//    homePage.goToContactUsPage();
-//    contactUs.completeForm("Tester", "test@test.com", "Testing", "Testing");
-//    SucessContactFormSent Thanks = PageFactory.initElements(driver, SucessContactFormSent.class);
-//    String answer = Thanks.getMessage();
-//    Assert.assertTrue(answer.contains("Thank you for contacting us."));
-//    driver.quit();
-//  }
+  @Test(description = "Send form and verify if it was properly sent")
+  public void case4() {
+    WebElement contactPage = driver.findElement(By.cssSelector(".page_item.page-item-2>a"));
+    contactPage.click();
+    // Lineas 98 y 99 no funcionan en la clase HomePage.
+    ContactUsPage contactUs = PageFactory.initElements(driver, ContactUsPage.class);
+    contactUs.completeForm("Tester", "test@test.com", "Testing", "Testing");
+    SucessContactFormSent Thanks = PageFactory.initElements(driver, SucessContactFormSent.class);
+    String answer = Thanks.getMessage();
+    Assert.assertTrue(answer.contains("Thank you for contacting us."));
+  }
+
+  /**
+   * Case 5: Send form with invalid data and verify if it was not sent. Send
+   * again with valid data and verify if it was properly sent.
+   */
+
+  @Test(description = "Send form with invalid data and verify if it was not sent. Send again "
+      + "with valid data and verify if it was properly sent")
+  public void case5() {
+    WebElement contactPage = driver.findElement(By.cssSelector(".page_item.page-item-2>a"));
+    contactPage.click();
+    // Lineas 116 y 117 no funcionan en la clase HomePage.
+    ContactUsPage contactUs = PageFactory.initElements(driver, ContactUsPage.class);
+    contactUs.completeForm("Tester", "test", "Testing", "Testing");
+    String answerTwo = contactUs.getMessage();
+    Assert.assertTrue(answerTwo.contains("Please make corrections below and try again."));
+    contactUs.goBackToContactUs();
+    contactUs.completeForm("Tester", "test@test.com", "Testing", "Testing");
+    SucessContactFormSent Thanks = PageFactory.initElements(driver,
+    SucessContactFormSent.class);
+    String answer = Thanks.getMessage();
+    Assert.assertTrue(answer.contains("Thank you for contacting us."));
+  }
 }
